@@ -37,9 +37,11 @@ $c::
 sendinput {.}
 return
 
+/*
 $l::
 sendinput {.}
 return
+*/
 
 $^space::
 sendinput {pgdn}{up 5}{space}
@@ -61,8 +63,12 @@ s::
 sendinput {pgup}^t{pgdn}
 return
 
+m::
+sendinput {pgup}^t{pgdn}
+return
+
 d::
-sendinput {pgup}^{left}{delete}{pgdn}
+sendinput {pgup}{delete}{pgup}^{left}^{right}{pgdn}
 return
 
 [::
@@ -81,7 +87,17 @@ o::
 sendinput {pgup}^t{delete}{pgdn}
 return
 
+l::
+sendinput {pgup}^{left}{pgdn}
+return
+
+r::
+sendinput {pgup}^{right}{pgdn}
+return
+
+/*
 #ifwinactive
 \::
 exitapp;
 
+*/
